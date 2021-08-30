@@ -30,6 +30,11 @@ function Robes({ Component, pageProps }) {
           content="See the floor price of Divine Robes from the Loot project."
         />
         <meta property="og:image" content="https://robes.market/og.png" />
+        <script
+          data-goatcounter="https://divinerobes.goatcounter.com/count"
+          async
+          src="//gc.zgo.at/count.js"
+        ></script>
       </Head>
     </>
   )
