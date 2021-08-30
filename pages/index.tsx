@@ -45,11 +45,19 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
         </p>
         <p className="md:text-lg pt-2">
           Site by{' '}
-          <a href="https://twitter.com/worm_emoji" className="underline">
+          <a
+            target="_blank"
+            href="https://twitter.com/worm_emoji"
+            className="underline"
+          >
             worm_emoji
           </a>
           . Join the{' '}
-          <a className="underline" href="https://divineroles.vercel.app">
+          <a
+            target="_blank"
+            className="underline"
+            href="https://divineroles.vercel.app"
+          >
             Discord
           </a>
           .
