@@ -1,11 +1,8 @@
-import Link from 'next/link'
-import { RobeInfo } from './api/robes'
+import { RobeInfo, fetchRobes } from './api/robes'
 import { format as ts } from 'timeago.js'
 
 export async function getStaticProps() {
-  const res = await fetch('https://robes-market.vercel.app/api/robes')
-  const data = await res.json()
-
+  const data = await fetchRobes()
   return {
     props: {
       robes: data.robes,

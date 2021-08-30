@@ -9,7 +9,7 @@ const chunked = chunk(RobeIDs, 20)
 const apiKey = process.env.OPENSEA_API_KEY
 
 const fetchRobePage = async (ids: string[]) => {
-  let url = 'https://api.opensea.io/api/v1/assets?collection=loot-rng&'
+  let url = 'https://api.opensea.io/api/v1/assets?collection=lootproject&'
   url += ids.map((id) => `token_ids=${id}`).join('&')
 
   const res = await fetch(url, {
@@ -28,7 +28,7 @@ export interface RobeInfo {
   svg: string
 }
 
-const fetchRobes = async () => {
+export const fetchRobes = async () => {
   const data = await pMap(chunked, fetchRobePage, { concurrency: 2 })
   const mapped = flatten(data)
     .filter((d) => {
@@ -46,13 +46,16 @@ const fetchRobes = async () => {
         svg: a.image_url,
       }
     })
-  return orderBy(mapped, ['price', 'id'], ['asc', 'asc'])
+  return {
+    robes: orderBy(mapped, ['price', 'id'], ['asc', 'asc']),
+    lastUpdate: new Date().toISOString(),
+  }
 }
 
 const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const robes = await fetchRobes()
-    res.status(200).json({ robes, lastUpdate: new Date() })
+    const data = await fetchRobes()
+    res.status(200).json(data)
   } catch (err) {
     res.status(500).json({ statusCode: 500, message: err.message })
   }
