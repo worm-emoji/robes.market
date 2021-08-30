@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import pMap from 'p-map'
-import { chunk, flatten, orderBy, take } from 'lodash'
+import { chunk, flatten, orderBy } from 'lodash'
 import { utils as etherUtils, BigNumber } from 'ethers'
 import type { OpenseaResponse, Asset } from '../../../utils/openseaTypes'
 import RobeIDs from '../../../data/robes-ids.json'
 
-const chunked = take(chunk(RobeIDs, 20), 3)
+const chunked = chunk(RobeIDs, 20)
 const apiKey = process.env.OPENSEA_API_KEY
 
 const fetchRobePage = async (ids: string[]) => {
@@ -46,7 +46,7 @@ const fetchRobes = async () => {
         svg: a.image_url,
       }
     })
-  return orderBy(mapped, 'price', 'asc')
+  return orderBy(mapped, ['price', 'id'], 'asc')
 }
 
 const handler = async (_req: NextApiRequest, res: NextApiResponse) => {

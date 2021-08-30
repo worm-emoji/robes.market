@@ -1,15 +1,57 @@
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import { RobeInfo } from './api/robes'
+import { format as ts } from 'timeago.js'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+export async function getStaticProps() {
+  const res = await fetch('https://robes-market.vercel.app/api/robes')
+  const data = await res.json()
+
+  return {
+    props: {
+      robes: data.robes,
+      lastUpdate: data.lastUpdate,
+    },
+    revalidate: 300,
+  }
+}
+
+interface Props {
+  robes: RobeInfo[]
+  lastUpdate: string
+}
+
+const Robe = ({ robe }: { robe: RobeInfo }) => {
+  return (
+    <a href={robe.url} target="_blank">
+      <div className="flex flex-col justify-center items-center gap-2 p-4 m-4 border border-white transform hover:scale-105 transition-all">
+        <img src={robe.svg} />
+        <div className="text-center">
+          <p className="text-lg">#{robe.id}</p>
+          <p>{robe.price} ETH</p>
+        </div>
+      </div>
+    </a>
+  )
+}
+
+const IndexPage = ({ robes, lastUpdate }: Props) => {
+  return (
+    <div className="font-mono flex flex-col justify-center items-center gap-4 pt-10 w-screen">
+      <h1 className="text-3xl">Divine Robes</h1>
+      <div className="text-center">
+        <p className="text-xl">
+          The current floor price for Divine Robes is {robes[0].price} ETH.
+        </p>
+        <p>Last updated {ts(lastUpdate)}</p>
+
+        <div className="grid grid-cols-2 pt-5">
+          {robes.map((robe) => {
+            return <Robe robe={robe} key={robe.id} />
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default IndexPage
