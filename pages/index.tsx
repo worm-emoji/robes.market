@@ -37,18 +37,29 @@ const Robe = ({ robe }: { robe: RobeInfo }) => {
 const IndexPage = ({ robes, lastUpdate }: Props) => {
   return (
     <div className="font-mono flex flex-col justify-center items-center gap-4 pt-10 md:w-screen">
-      <h1 className="text-3xl">Divine Robes</h1>
-      <div className="text-center">
+      <h1 className="text-3xl font-bold">Divine Robes</h1>
+      <div className="text-center max-w-screen-md leading-loose">
         <p className="text-xl">
-          The current floor price for Divine Robes is {robes[0].price} ETH.
+          There are {robes.length} bags for sale with Divine Robes, with a floor
+          price of {robes[0].price} ETH.
         </p>
-        <p>Last updated {ts(lastUpdate)}</p>
-
-        <div className="grid md:grid-cols-2 pt-5 w-full">
-          {robes.map((robe) => {
-            return <Robe robe={robe} key={robe.id} />
-          })}
-        </div>
+        <p className="text-lg pt-2">
+          Site by{' '}
+          <a href="https://twitter.com/worm_emoji" className="underline">
+            worm_emoji
+          </a>
+          . Join the{' '}
+          <a className="underline" href="https://divineroles.vercel.app">
+            Discord
+          </a>
+          .
+        </p>
+        <p className="text-sm mv-4">Last updated {ts(lastUpdate)}</p>
+      </div>
+      <div className="grid md:grid-cols-2 pt-5">
+        {robes.map((robe) => {
+          return <Robe robe={robe} key={robe.id} />
+        })}
       </div>
     </div>
   )
