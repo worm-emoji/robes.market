@@ -46,7 +46,7 @@ const fetchRobes = async () => {
         svg: a.image_url,
       }
     })
-  return orderBy(mapped, ['price', 'id'], ['asc', 'asc')
+  return orderBy(mapped, ['price', 'id'], ['asc', 'asc'])
 }
 
 const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
