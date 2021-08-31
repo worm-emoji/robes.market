@@ -3,7 +3,7 @@ import pMap from 'p-map'
 import { chunk, flatten, orderBy } from 'lodash'
 import { utils as etherUtils, BigNumber } from 'ethers'
 import type { OpenseaResponse, Asset } from '../../../utils/openseaTypes'
-import RobeIDs from '../../../data/robes-ids.json'
+import RobeIDs from '../../../data/ancients-ids.json'
 
 const chunked = chunk(RobeIDs, 20)
 const apiKey = process.env.OPENSEA_API_KEY
@@ -14,7 +14,7 @@ const fetchRobePage = async (ids: string[]) => {
 
   const res = await fetch(url, {
     headers: {
-      'X-API-KEY': apiKey,
+      // 'X-API-KEY': apiKey,
     },
   })
   const json: OpenseaResponse = await res.json()

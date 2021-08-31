@@ -34,14 +34,14 @@ const Robe = ({ robe }: { robe: RobeInfo }) => {
 const IndexPage = ({ robes, lastUpdate }: Props) => {
   return (
     <div className="py-3 md:pb-0 font-mono flex flex-col justify-center items-center gap-4 pt-10 md:w-screen">
-      <h1 className="text-lg md:text-3xl">Divine Robes</h1>
+      <h1 className="text-lg md:text-3xl">The Ancient</h1>
       <div className="text-center max-w-screen-md md:leading-loose">
         <p className="md:text-xl">
-          There are {robes.length} bags for sale with Divine Robes. The floor
-          price is {robes[0].price} ETH.
+          There are {robes.length} Ancient Helm bags for sale, with a floor
+          price of {robes[0].price} ETH.
         </p>
         <p className="md:text-lg pt-2">
-          Site by{' '}
+          Site forked from {' '}
           <a
             target="_blank"
             href="https://twitter.com/worm_emoji"
@@ -49,7 +49,15 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
           >
             worm_emoji
           </a>
-          . Join the{' '}
+          's{' '}
+          <a
+            target="_blank"
+            href="https://github.com/ylukem/robes.market"
+            className="underline"
+          >
+            work
+          </a>.
+          {/* Join the{' '}
           <a
             target="_blank"
             className="underline"
@@ -57,7 +65,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
           >
             Discord
           </a>
-          .
+          . */}
         </p>
         <p className="text-sm mv-4">Last updated {ts(lastUpdate)}</p>
       </div>
