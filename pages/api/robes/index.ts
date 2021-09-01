@@ -2,11 +2,28 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import pMap from 'p-map'
 import { chunk, flatten, orderBy } from 'lodash'
 import { utils as etherUtils, BigNumber } from 'ethers'
+import { rarityImage } from 'loot-rarity'
 import type { OpenseaResponse, Asset } from '../../../utils/openseaTypes'
 import RobeIDs from '../../../data/robes-ids.json'
 
 const chunked = chunk(RobeIDs, 20)
 const apiKey = process.env.OPENSEA_API_KEY
+
+const imageCache = new Map()
+
+const fetchSvgRarity = async ({ image_url, token_id }) => {
+  if (!imageCache.has(token_id)) {
+    console.log(`${token_id} not in cache. Caching…`)
+    imageCache.set(
+      token_id,
+      await rarityImage(image_url, {
+        colorFn: ({ itemName }) =>
+          itemName.toLowerCase().includes('divine robe') && 'cyan',
+      }),
+    )
+  }
+  return imageCache.get(token_id)
+}
 
 const fetchRobePage = async (ids: string[]) => {
   let url = 'https://api.opensea.io/api/v1/assets?collection=lootproject&'
@@ -18,7 +35,13 @@ const fetchRobePage = async (ids: string[]) => {
     },
   })
   const json: OpenseaResponse = await res.json()
-  return json.assets
+
+  return Promise.all(
+    json.assets.map(async (asset) => ({
+      ...asset,
+      image_url: await fetchSvgRarity(asset),
+    })),
+  )
 }
 
 export interface RobeInfo {
