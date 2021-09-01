@@ -1742,6 +1742,14 @@ isarray@^1.0.0, isarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
 
+isomorphic-fetch@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-3.0.0.tgz#0267b005049046d2421207215d45d6a262b8b8b4"
+  integrity sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==
+  dependencies:
+    node-fetch "^2.6.1"
+    whatwg-fetch "^3.4.1"
+
 jest-worker@27.0.0-next.5:
   version "27.0.0-next.5"
   resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-27.0.0-next.5.tgz#5985ee29b12a4e191f4aae4bb73b97971d86ec28"
@@ -1829,6 +1837,13 @@ loose-envify@^1.1.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+loot-rarity@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/loot-rarity/-/loot-rarity-3.0.0.tgz#6c3b0bd1c326d8bff15c3bfb155d4a4c34eebf90"
+  integrity sha512-iOuP2+dleTLhet976k/2P5nyiiCJmOGsn0kEwUXozbKGAgRel1DXFrC/dzqy6YCIiHXprU4HH2/2DwSQrFod5Q==
+  dependencies:
+    isomorphic-fetch "^3.0.0"
 
 make-dir@^3.0.2:
   version "3.1.0"
@@ -1979,7 +1994,7 @@ node-emoji@^1.11.0:
   dependencies:
     lodash "^4.17.21"
 
-node-fetch@2.6.1:
+node-fetch@2.6.1, node-fetch@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
@@ -2140,6 +2155,13 @@ parse-asn1@^5.0.0, parse-asn1@^5.1.5:
     evp_bytestokey "^1.0.0"
     pbkdf2 "^3.0.3"
     safe-buffer "^5.1.1"
+
+parse-data-url@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/parse-data-url/-/parse-data-url-4.0.1.tgz#132e9dc00c8ae0ed63b212f749bc05b35f19a960"
+  integrity sha512-W+ZgeHPkG2Awbj2RCGG3zALoKGoKucIWXRp8jPgTVNmRgiftXbwXXzzaXXH4L1+OdxeSXC6C8G+hzlcv41f24A==
+  dependencies:
+    valid-data-url "^4.0.0"
 
 parse-json@^5.0.0:
   version "5.2.0"
@@ -2936,6 +2958,11 @@ util@^0.12.0:
     safe-buffer "^5.1.2"
     which-typed-array "^1.1.2"
 
+valid-data-url@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/valid-data-url/-/valid-data-url-4.0.0.tgz#264c22b08178058778c15a7e1a625a11601ae2d5"
+  integrity sha512-mV5E0AG/F2yPiJzYlhyooI83BLIV0i4h/ueZwdxr1Mh8ZeKKpcFZLbZbAAedL/PLd11sqIgppJBrb4SNXA0PMQ==
+
 vm-browserify@1.1.2, vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
@@ -2953,6 +2980,11 @@ webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
   integrity sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==
+
+whatwg-fetch@^3.4.1:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
 
 whatwg-url@^7.0.0:
   version "7.1.0"
