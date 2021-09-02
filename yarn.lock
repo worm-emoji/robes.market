@@ -1033,6 +1033,13 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cross-fetch@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
+  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
+  dependencies:
+    node-fetch "2.6.1"
+
 crypto-browserify@3.12.0, crypto-browserify@^3.11.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/crypto-browserify/-/crypto-browserify-3.12.0.tgz#396cf9f3137f03e4b8e532c58f698254e00f80ec"
@@ -1829,6 +1836,13 @@ loose-envify@^1.1.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+loot-rarity@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/loot-rarity/-/loot-rarity-4.1.0.tgz#f2fa49049eee7b0ec369be055ab5f1d63c9a99d1"
+  integrity sha512-nJ9Now0zbti971R28K6KROyncFkRApn+pyXCA/3T+H6apbmww8fjJ2KnXZan8S+Kud3MbzF0B8B75iNSv1YQDA==
+  dependencies:
+    cross-fetch "^3.1.4"
 
 make-dir@^3.0.2:
   version "3.1.0"
