@@ -4,7 +4,7 @@ import { chunk, flatten, orderBy } from 'lodash'
 import { utils as etherUtils, BigNumber } from 'ethers'
 import { rarityImage } from 'loot-rarity'
 import type { OpenseaResponse, Asset } from '../../../utils/openseaTypes'
-import RobeIDs from '../../../data/11.json'
+import RobeIDs from '../../../data/quads.json'
 
 const chunked = chunk(RobeIDs, 20)
 const apiKey = process.env.OPENSEA_API_KEY
@@ -26,7 +26,7 @@ export interface RobeInfo {
   svg: string
 }
 
-export const fetchRobes = async (nType) => {
+export const fetchRobes = async () => {
   const data = await pMap(chunked, fetchRobePage, { concurrency: 2 })
   const mapped = flatten(data)
     .filter(

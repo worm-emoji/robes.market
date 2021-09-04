@@ -26,7 +26,7 @@ export interface RobeInfo {
   svg: string
 }
 
-export const fetchRobes = async (nType) => {
+export const fetchRobes = async () => {
   const data = await pMap(chunked, fetchRobePage, { concurrency: 2 })
   const mapped = flatten(data)
     .filter(

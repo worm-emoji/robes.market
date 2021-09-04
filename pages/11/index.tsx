@@ -2,7 +2,7 @@ import { RobeInfo, fetchRobes } from '../api/11'
 import { format as ts } from 'timeago.js'
 
 export async function getStaticProps() {
-  const data = await fetchRobes(0)
+  const data = await fetchRobes()
   return {
     props: {
       robes: data.robes,
