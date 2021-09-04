@@ -20,21 +20,24 @@ function Robes({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700&display=swap"
           rel="stylesheet"
         />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content="@worm_emoji" />
-        <meta property="og:url" content="https://robes.market" />
-        <meta property="og:title" content="robes.market" />
+        <meta property="og:url" content="https://nproject.market" />
+        <meta property="og:title" content="npoject.market" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta
           property="og:description"
           content="See the floor price of Divine Robes from the Loot project."
         />
         <meta property="og:image" content="https://robes.market/og.png" />
-        <script
-          data-goatcounter="https://divinerobes.goatcounter.com/count"
-          async
-          src="//gc.zgo.at/count.js"
-        ></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-206681670-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-206681670-1');
+</script>
+
       </Head>
     </>
   )
