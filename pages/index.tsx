@@ -44,7 +44,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/0"
             className="underline"
           >
-           0
+           0 (36/8888)
           </a>
           </p>
                   <p className="md:text-lg pt-2">
@@ -52,7 +52,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/11"
             className="underline"
           >
-           11
+           11 (1360/8888)
           </a>
           </p>
                   <p className="md:text-lg pt-2">
@@ -60,7 +60,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/12"
             className="underline"
           >
-           12
+           12 (441/8888)
           </a>
           </p>
                   <p className="md:text-lg pt-2">
@@ -68,7 +68,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/13"
             className="underline"
           >
-           13
+           13 (174/8888)
           </a>
           </p>
                   <p className="md:text-lg pt-2">
@@ -76,7 +76,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/14"
             className="underline"
           >
-           14
+           14 (39/8888)
           </a>
 
         </p>
@@ -87,7 +87,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/trips"
             className="underline"
           >
-           trips
+           trips (391/8888)
           </a>
 
         </p>
@@ -97,7 +97,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/quads"
             className="underline"
           >
-           quads
+           quads (43/8888)
           </a>
 
         </p>
@@ -107,7 +107,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/quints"
             className="underline"
           >
-           quints
+           quints (8/8888)
           </a>
 
         </p>
@@ -118,7 +118,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/golden"
             className="underline"
           >
-           Golden Ratio
+           Golden Ratio (7/8888)
           </a>
 
         </p>
@@ -129,7 +129,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/primes"
             className="underline"
           >
-           Primes
+           Primes (9/8888)
           </a>
 
         </p>
