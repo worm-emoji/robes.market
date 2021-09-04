@@ -15,7 +15,6 @@ const fetchRobePage = async (ids: string[]) => {
 
   const res = await fetch(url);
   const json: OpenseaResponse = await res.json()
-
   return json.assets
 }
 
@@ -31,7 +30,7 @@ export const fetchRobes = async () => {
   const mapped = flatten(data)
     .filter(
       (a: Asset) =>
-        a?.sell_orders?.[0]?.payment_token_contract.symbol === 'ETH',
+        a?.sell_orders?.[0]?.payment_token_contract.symbol === 'ETH' || a?.sell_orders?.[0]?.payment_token_contract.symbol === 'WETH',
     )
     .map((a: Asset): RobeInfo => {
       return {
@@ -45,6 +44,7 @@ export const fetchRobes = async () => {
         svg: a.image_url,
       }
     })
+
 
   return {
     robes: orderBy(mapped, ['price', 'id'], ['asc', 'asc']),
