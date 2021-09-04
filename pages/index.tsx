@@ -112,6 +112,17 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
 
         </p>
 
+
+        <p style={{color: '#ffd700'}} className="md:text-lg pt-2">
+                    <a
+            href="/golden"
+            className="underline"
+          >
+           Golden Ratio
+          </a>
+
+        </p>
+
       </div>
     </div>
   )
