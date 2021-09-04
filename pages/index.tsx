@@ -123,6 +123,17 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
 
         </p>
 
+                <h2 className="text-lg pt-3 mv-4">Sets</h2>
+                         <p className="md:text-lg pt-2">
+                    <a
+            href="/primes"
+            className="underline"
+          >
+           Primes
+          </a>
+
+        </p>
+
       </div>
     </div>
   )
