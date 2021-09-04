@@ -4,33 +4,19 @@ import { chunk, flatten, orderBy } from 'lodash'
 import { utils as etherUtils, BigNumber } from 'ethers'
 import { rarityImage } from 'loot-rarity'
 import type { OpenseaResponse, Asset } from '../../../utils/openseaTypes'
-import RobeIDs from '../../../data/robes-ids.json'
+import RobeIDs from '../../../data/quints.json'
 
 const chunked = chunk(RobeIDs, 20)
 const apiKey = process.env.OPENSEA_API_KEY
 
 const fetchRobePage = async (ids: string[]) => {
-  let url = 'https://api.opensea.io/api/v1/assets?collection=lootproject&'
+  let url = 'https://api.opensea.io/api/v1/assets?collection=n-project&'
   url += ids.map((id) => `token_ids=${id}`).join('&')
 
-  const res = await fetch(url, {
-    headers: {
-      'X-API-KEY': apiKey,
-    },
-  })
+  const res = await fetch(url);
   const json: OpenseaResponse = await res.json()
 
-  return Promise.all(
-    json.assets.map(async (asset) => {
-      return {
-        ...asset,
-        image_url: await rarityImage(asset.token_metadata, {
-          colorFn: ({ itemName }) =>
-            itemName.toLowerCase().includes('divine robe') && 'cyan',
-        }),
-      }
-    }),
-  )
+  return json.assets
 }
 
 export interface RobeInfo {
@@ -40,7 +26,7 @@ export interface RobeInfo {
   svg: string
 }
 
-export const fetchRobes = async () => {
+export const fetchRobes = async (nType) => {
   const data = await pMap(chunked, fetchRobePage, { concurrency: 2 })
   const mapped = flatten(data)
     .filter(
