@@ -25,7 +25,7 @@ function Robes({ Component, pageProps }) {
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta
           property="og:description"
-          content="See the floor price of Divine Robes from the Loot project."
+          content="See the prices for interesting N Project pieces"
         />
         <meta property="og:image" content="https://robes.market/og.png" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
