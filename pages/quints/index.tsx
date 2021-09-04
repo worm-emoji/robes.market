@@ -37,7 +37,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
       <h1 className="text-lg md:text-3xl">Quints</h1>
       <div className="text-center max-w-screen-md md:leading-loose">
         <p className="md:text-xl">
-          There are {robes.length} N's for sale containing a sequence of 3 identical numbers. The floor
+          There are {robes.length} N's for sale containing a sequence of 5 identical numbers. The floor
           price is {robes[0].price} ETH.
         </p>
         <p className="text-sm mv-4">Last updated {ts(lastUpdate)}</p>
