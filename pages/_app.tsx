@@ -28,14 +28,16 @@ function Robes({ Component, pageProps }) {
           content="See the prices for interesting N Project pieces"
         />
         <meta property="og:image" content="https://robes.market/og.png" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-206681670-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-206681670-1"></script>
+        <script
+            dangerouslySetInnerHTML={{
+              __html: `  window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-206681670-1');
-</script>
+  gtag('config', 'UA-206681670-1');`
+            }}
+          />
 
       </Head>
     </>
