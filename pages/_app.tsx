@@ -28,7 +28,6 @@ function Robes({ Component, pageProps }) {
           content="See the prices for interesting N Project pieces"
         />
         <meta property="og:image" content="https://robes.market/og.png" />
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-206681670-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
