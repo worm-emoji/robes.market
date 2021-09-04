@@ -27,7 +27,6 @@ function Robes({ Component, pageProps }) {
           property="og:description"
           content="See the prices for interesting N Project pieces"
         />
-        <meta property="og:image" content="https://robes.market/og.png" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-206681670-1"></script>
         <script
             dangerouslySetInnerHTML={{
