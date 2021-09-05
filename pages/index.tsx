@@ -128,7 +128,7 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
             href="/pi"
             className="underline"
           >
-           Pi 🥧 (10/8888)
+           Pi 🥧 (10/8888) 
           </a>
 
         </p>
