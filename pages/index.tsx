@@ -145,6 +145,18 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
 
         </p>
 
+
+        <h2 className="text-lg pt-3 mv-4">Special</h2>
+                         <p className="md:text-lg pt-2">
+                    <a
+            href="/club-69"
+            className="underline"
+          >
+           Club 69 (101/8888)
+          </a>
+
+        </p>
+
       </div>
     </div>
   )
