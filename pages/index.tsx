@@ -123,6 +123,17 @@ const IndexPage = ({ robes, lastUpdate }: Props) => {
 
         </p>
 
+        <p style={{color: '#d4b083'}} className="md:text-lg pt-2">
+                    <a
+            href="/pi"
+            className="underline"
+          >
+           Pi 🥧 (10/8888)
+          </a>
+
+        </p>
+
+
                 <h2 className="text-lg pt-3 mv-4">Sets</h2>
                          <p className="md:text-lg pt-2">
                     <a
